@@ -14,7 +14,7 @@ class TodoModelTest(TestCase):
             title = "this is title",
             body = "this is body"
         )
-    
+
 
     def test_model_content(self):
         self.assertEqual(self.todo.title, "this is title")

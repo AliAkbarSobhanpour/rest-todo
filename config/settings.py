@@ -41,12 +41,14 @@ INSTALLED_APPS = [
     "todos.apps.TodosConfig",
 
     #external app 
+    "corsheaders",
     "rest_framework",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -54,6 +56,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+CORS_ALLOWED_ORIGINS = (
+    "http://localhost:3000", # for react 
+    "http://localhost:8000", # for django
+)
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
